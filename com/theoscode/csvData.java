@@ -3,7 +3,7 @@
  * 
  */
 
-public class csvData {
+public class CsvData {
 
 	String product_id;
 	String quantity;
