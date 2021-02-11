@@ -16,7 +16,7 @@ import com.theoscode.csvData;
  * 
  */
 
-public class csv {
+public class CSV {
 
 	static String fileName = "data.csv";
 	static ArrayList<csvData> csvDataArrayList = new ArrayList<csvData>();
