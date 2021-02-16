@@ -3,6 +3,7 @@ package com.pinkpythons.csv.crud.read;
 import com.pinkpythons.csv.CSV;
 import com.pinkpythons.csv.CsvData;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -187,5 +188,27 @@ public class ReadData {
     public static ArrayList<CsvData> select(Query query){
         ArrayList<CsvData> outputData = filter(query);
         return outputData;
+    }
+
+    /**
+     * Query from a string
+     *
+     * @param queryString   The query string
+     * @param fileName  The name of the file
+     */
+    public static void selectFromString(String queryString, String fileName){
+        try {
+            if (queryString != null) {
+                Query query = QueryFactory.buildQuery(queryString);
+                ArrayList<CsvData> data = select(query);
+                CSV.writeData(data, fileName);
+            } else {
+                throw new NullPointerException("Requires a Query");
+            }
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }catch(NullPointerException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
