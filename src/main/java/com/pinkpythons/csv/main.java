@@ -1,4 +1,5 @@
 package com.pinkpythons.csv;
+import com.pinkpythons.csv.crud.read.Delete;
 
 /**
  * The Csv Data class.
@@ -16,6 +17,7 @@ import java.util.Scanner;
  * Main class designed to run the code
  */
 public class main {
+    public static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
         handleUserInput();
     }
@@ -25,7 +27,6 @@ public class main {
      */
     public static void handleUserInput() {
         try {
-            Scanner input = new Scanner(System.in);
             System.out.println("Would you like to (CREATE,READ,UPDATE,DELETE,EXIT)?");
             while (true) {
                 String userRequest = input.nextLine().toUpperCase();
@@ -45,6 +46,7 @@ public class main {
                         //Insert your code to 'update'
                         break;
                     case "DELETE":
+                        Delete.question();
                         //Insert your code to 'delete'
                         break;
                     case "EXIT":
