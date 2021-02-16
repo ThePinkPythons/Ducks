@@ -65,7 +65,7 @@ public class QueryFactory {
        String[] queries = qstring.split(",");
        if(queries.length > 0){
            for(String qpart : queries){
-               String[] qels = qpart.split("\s+");
+               String[] qels = qpart.split("\\s+");
                if(qels.length == 3){
                    String item = qels[0];
                    String operation = qels[1];
