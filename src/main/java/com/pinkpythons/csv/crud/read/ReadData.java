@@ -135,7 +135,7 @@ public class ReadData {
      * Nulls return false if not in the query.
      *
      * @param query The query object
-     * @param data  The dta to check
+     * @param data  The data to check
      * @return Whether the product is equal
      */
     public static boolean isProductIdEquals(Query query, CsvData data){

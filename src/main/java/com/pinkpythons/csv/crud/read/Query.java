@@ -28,7 +28,7 @@ public class Query {
     /**
      * Get the product id
      *
-     * @return  Th product id
+     * @return  The product id
      */
     public String getProductId() {
         return productId;
