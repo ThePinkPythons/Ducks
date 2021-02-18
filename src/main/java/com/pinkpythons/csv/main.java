@@ -9,6 +9,7 @@ import com.pinkpythons.csv.crud.read.Delete;
 
 
 import com.pinkpythons.csv.crud.read.ReadData;
+import com.pinkpythons.csv.crud.read.Update;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -27,9 +28,9 @@ public class main {
      */
     public static void handleUserInput() {
         try {
-            System.out.println("Would you like to (CREATE,READ,UPDATE,DELETE,EXIT)?");
             while (true) {
-                String userRequest = input.nextLine().toUpperCase();
+                System.out.println("Would you like to (CREATE,READ,UPDATE,DELETE,EXIT)?");
+                String userRequest = main.input.next().toUpperCase();
                 switch (userRequest) {
                     case "CREATE":
                         System.out.println("Create");
@@ -43,6 +44,23 @@ public class main {
                         ReadData.selectFromString(newLine, fileName);
                         break;
                     case "UPDATE":
+                        System.out.println("\nYou have chosen Update!");
+                        System.out.println("\nPlease enter the ID of the product you want to update:");
+                        String desiredID = main.input.next();
+
+                        System.out.println("\nPlease enter the product quantity:");
+                        String quantity = main.input.next();
+
+                        System.out.println("\nPlease enter the wholesale cost:");
+                        String wholesaleCost = main.input.next();
+
+                        System.out.println("\nPlease enter the sale price:");
+                        String salePrice = main.input.next();
+
+                        System.out.println("\nPlease enter the supplier ID:");
+                        String supplierID = main.input.next();
+
+                        Update.question(desiredID, quantity,wholesaleCost, salePrice, supplierID);
                         //Insert your code to 'update'
                         break;
                     case "DELETE":
